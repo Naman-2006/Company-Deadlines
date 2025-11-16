@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <!-- Brand on the LEFT -->
+    <a class="navbar-brand" href="#">Company Filings</a>
+
+    <!-- Toggler on the RIGHT -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Normal menu (LEFT aligned, not centered) -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">  <!-- ms-auto = push items to the RIGHT -->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{%url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'companies_info' %}">Companies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Coming Soon</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>

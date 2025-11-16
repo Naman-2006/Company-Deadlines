@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">   <!-- adds space below navbar -->
+  <div class="card text-center">
+    <div class="card-header">
+      Featured
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Company Info Downloader</h5>
+      <p class="card-text">
+        Enter company numbers to fetch their latest filing information from Companies House.
+      </p>
+      <a href="{% url 'companies_info' %}" class="btn btn-primary">Go somewhere</a>
+    </div>
+
+    <div class="card-footer text-body-secondary">
+      Pending Features
+    </div>
+  </div>
+</div>
+
+{% endblock %}
