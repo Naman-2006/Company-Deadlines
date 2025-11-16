@@ -1,5 +1,6 @@
 import requests
 from django.conf import settings
+from concurrent.futures import ThreadPoolExecutor
 
 class CompaniesHouseAPI:
     BASE_URL = "https://api.company-information.service.gov.uk/company/"
@@ -22,9 +23,12 @@ class CompaniesHouseAPI:
 
     def fetch_multiple_companies(self, company_numbers):
         results = []
-        for number in company_numbers:
-            profile = self.fetch_company_profile(number)
-            results.append(profile)  
+        with ThreadPoolExecutor(max_workers=50) as executor:
+            futures = executor.map(self.fetch_company_profile, company_numbers)
+
+            for result in futures:
+                results.append(result)
+        
         return results
     
     
